@@ -1,0 +1,45 @@
+.main-banner {
+  position: relative !important;
+  z-index: -3;
+  height: 600px;
+  background-image: url("../../assets/img/background-item2021.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  &__particles {
+    position: absolute !important;
+    width: 100%;
+    height: 530px;
+    top: 70px !important;
+    z-index: -2;
+    //    background-color: rgba($color: #000000, $alpha: 0.45);
+  }
+}
+
+.content-banner {
+  position: absolute !important;
+  width: 100%;
+  height: 530px;
+  top: 70px !important;
+
+  &__title {
+    padding-top: 120px;
+    line-height: 550%;
+    margin-bottom: 0 !important;
+    h1 {
+      margin-bottom: 0px !important;
+    }
+    h2 {
+      margin-top: 0px !important;
+    }
+  }
+  svg {
+    margin-right: -2px !important;
+  }
+  a {
+    color: $font-dark;
+    &:hover {
+      color: $dark;
+    }
+  }
+}

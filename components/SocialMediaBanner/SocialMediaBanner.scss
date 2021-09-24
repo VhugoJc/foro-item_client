@@ -1,0 +1,42 @@
+.social-media-banner {
+  position: static !important;
+  z-index: -3;
+  height: 100%;
+  padding-bottom: 100px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-image: url("../../assets/img/background_social-media.png");
+  &__content {
+    padding-top: 100px;
+    width: 45%;
+    h2 {
+      line-height: 110%;
+      font-size: 40px;
+    }
+    &-sm {
+      .yt,
+      .ig {
+        height: 25px !important;
+        &:hover {
+          -ms-transform: scale(1.4); /* IE 9 */
+          -webkit-transform: scale(1.4); /* Safari 3-8 */
+          transform: scale(1.4);
+        }
+      }
+      &__icon {
+        height: 30px !important;
+        width: 100% !important;
+        padding: 0 10px 0 10px;
+        margin: 0 auto;
+        transition: transform 0.2s;
+        box-sizing: border-box;
+        &:hover {
+          -ms-transform: scale(1.5); /* IE 9 */
+          -webkit-transform: scale(1.5); /* Safari 3-8 */
+          transform: scale(1.5);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,58 @@
+.footer {
+  width: 100% !important;
+  text-align: center !important;
+  height: 100% !important;
+  background-color: $dark;
+  padding-top: 50px;
+  padding-bottom: 10px;
+  color: $font-light;
+  &-logo {
+    &__img {
+      filter: brightness(0) invert(1);
+    }
+    @media (max-width: 765px) {
+      width: 99vw;
+    }
+  }
+  &-links {
+    position: static !important;
+    text-align: center !important;
+    &__title {
+      font-weight: normal !important;
+      padding: 15px 15px 15px 15px !important;
+      line-height: 50px;
+      font-size: 15px !important;
+      color: $font-light;
+      display: inline;
+      &:hover {
+        color: $turquoise !important;
+      }
+    }
+    @media (max-width: 1000px) {
+      display: none !important;
+    }
+  }
+  &-register {
+    position: static !important;
+    text-align: center !important;
+    h3 {
+      font-size: 15px !important;
+      color: $font-light;
+    }
+    &__btn {
+      width: 80% !important;
+    }
+
+    @media (max-width: 765px) {
+      width: 99vw;
+    }
+  }
+  &-rights {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 2px solid rgba($color: $turquoise, $alpha: 0.5);
+    a {
+      color: $turquoise;
+    }
+  }
+}

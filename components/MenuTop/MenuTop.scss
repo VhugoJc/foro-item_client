@@ -1,0 +1,96 @@
+.menu-top {
+  position: relative !important;
+  display: flex;
+  background-color: $light;
+  height: 70px;
+  width: 100%;
+  @media (max-width: 1000px) {
+    display: none !important;
+  }
+  &__left {
+    height: 70px;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 70px;
+    top: 0 !important;
+    position: relative !important;
+    width: 10%;
+  }
+  &__right {
+    margin-top: 10px;
+    text-align: center;
+    top: 0 !important;
+    left: 10%;
+    position: absolute !important;
+    width: 90% !important;
+    &-content {
+      justify-content: flex-end;
+    }
+  }
+  &__register-btn {
+    color: $font-light !important;
+    background-color: $turquoise !important;
+    border: none !important;
+    border-radius: 5px !important;
+    &:hover {
+      background-color: $turquoise800 !important;
+    }
+  }
+
+  &__mobile {
+    top: 0 !important;
+    right: 0 !important;
+    z-index: 200 !important;
+    position: fixed !important;
+    width: 100vw !important;
+    background-color: $dark;
+    display: flex !important;
+    height: 70px;
+    display: none !important;
+    @media (max-width: 1000px) {
+      display: flex !important;
+    }
+  }
+}
+//menu items text:
+.ant-menu-title-content {
+  color: $font-dark !important;
+  font-size: 15px !important;
+  &:hover {
+    color: $turquoise !important;
+  }
+}
+//eraese border bottom
+.ant-menu-horizontal {
+  border-bottom: none !important;
+}
+//remove background color when de menu.item is active
+.ant-menu-item-active {
+  background-color: transparent !important;
+}
+
+.ant-menu-title-content {
+  &::after {
+    border-bottom: none !important;
+  }
+}
+
+.ant-menu-item::selection {
+  border: 0 !important;
+  color: transparent !important;
+  border-bottom: none !important;
+  border-bottom-color: transparent !important ;
+}
+
+//Remove border-bottom
+.ant-menu-horizontal > .ant-menu-item:hover::after,
+.ant-menu-horizontal > .ant-menu-submenu:hover::after,
+.ant-menu-horizontal > .ant-menu-item-active::after,
+.ant-menu-horizontal > .ant-menu-submenu-active::after,
+.ant-menu-horizontal > .ant-menu-item-open::after,
+.ant-menu-horizontal > .ant-menu-submenu-open::after,
+.ant-menu-horizontal > .ant-menu-item-selected::after,
+.ant-menu-horizontal > .ant-menu-submenu-selected::after {
+  border-bottom: none !important;
+  border-bottom-color: transparent !important;
+}

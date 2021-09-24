@@ -1,0 +1,28 @@
+.count-down {
+  background-image: url("../../assets/img/item_background_turquoise.png");
+  height: 400px;
+  width: 100%;
+  text-align: center;
+  h1,
+  h4 {
+    color: $font-light !important;
+  }
+  &__col {
+    margin-left: 50px !important;
+    margin-right: 50px !important;
+    line-height: 80%;
+    @media (max-width: 700px) {
+      margin-left: 10px !important;
+      margin-right: 10px !important;
+    }
+    @media (max-width: 350px) {
+      margin-left: auto !important;
+      margin-right: auto !important;
+    }
+  }
+  .ant-divider {
+    height: 90px !important;
+    opacity: 0.5;
+    background-color: $font-light;
+  }
+}

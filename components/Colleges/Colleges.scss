@@ -1,0 +1,38 @@
+.colleges {
+  z-index: -6;
+  background-image: url("../../assets/img/241188322_10158551197468940_8273931117992831276_n.jpg");
+  height: 100% !important;
+  background-position: 70% 100% !important;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  @media (max-width: 700px) {
+    background-position: 10% 100% !important;
+  }
+  &__content {
+    z-index: 3;
+    text-align: center !important;
+    padding-bottom: 20px;
+    background-color: rgba($color: $dark, $alpha: 0.5);
+    height: 700px;
+    &-list {
+      margin: auto !important;
+      text-align: center;
+
+      .ant-card-bordered {
+        border-color: transparent !important;
+        background-color: transparent !important;
+        .ant-card-body {
+          padding-top: 0px !important;
+        }
+      }
+      &__card {
+        box-shadow: none !important; //borde entre cards
+        padding: 0px 0px 50px 0px !important;
+        &-img {
+          filter: brightness(0) invert(1);
+        }
+      }
+    }
+  }
+}
