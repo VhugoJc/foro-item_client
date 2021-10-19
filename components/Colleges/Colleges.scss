@@ -7,6 +7,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   @media (max-width: 700px) {
+    background-attachment: scroll !important; //ios mobile browser has a bug with fixed
     background-position: 10% 100% !important;
   }
   &__content {
@@ -30,9 +31,33 @@
         box-shadow: none !important; //borde entre cards
         padding: 0px 0px 50px 0px !important;
         &-img {
+          height: 70px !important;
           filter: brightness(0) invert(1);
         }
       }
     }
   }
+}
+
+//label for hover (tooltip)
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: $dark;
+  color: $font-light;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
 }

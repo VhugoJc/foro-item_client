@@ -2,6 +2,8 @@
 //layout
 @import "../components/MenuTop/MenuTop.scss";
 @import "../components/Footer/Footer.scss";
+@import "../components/FixedButton/FixedButton.scss";
+@import "../components/MobileFixedButton/MobileFIxedButton.scss";
 //components
 @import "../components/MainBanner/MainBanner.scss";
 @import "../components/CountDown/CountDown.scss";
@@ -11,3 +13,9 @@
 @import "../components/Speakers/Speakers.scss";
 @import "../components/Colleges/Colleges.scss";
 @import "../components/SocialMediaBanner/SocialMediaBanner.scss";
+@import "../components/SpeakerInfo/SpeakerInfo.scss";
+//forms
+@import "../components/Forms/InscriptionForm/InscriptionForm.scss";
+
+//pages
+@import "../pages/talleres/taller.scss";

@@ -1,13 +1,24 @@
-import { Avatar,Card} from "antd";
+import { Card} from "antd";
+import { BASE_PATH } from "../../Utils/Constants";
+import SpeakerCardItem from "./SpeakerCardItem";
+
 export default function SpeakersCard({profilesList}){
+    
     return(
         <div className="speakers-card">
             <div className="speakers-card__line">
                 <Card >
                     {
-                        profilesList.map(item=>{
-                            return  <SpeakerCardItem key={item.id} item={item}/>
-                        })
+                       profilesList.length>0
+                       ? profilesList.map(item=>{
+                        return  <SpeakerCardItem key={item.id} item={{
+                            data:item,
+                            name: `${item.nombre} ${item.apellidos}`,
+                            collage:item.institucion,
+                            img: `${item.avatar.url}`
+                        }}/>
+                    })
+                    :<h1>Hola</h1>
                     }
                 </Card>
             </div>
@@ -15,13 +26,3 @@ export default function SpeakersCard({profilesList}){
     );
 }
 
-export function SpeakerCardItem({item}){
-    const {name, collage, img}= item; 
-    return(
-        <Card.Grid style={{width:"33.33%"}} hoverable={false} className="speakers-card__line-item">
-            <Avatar size={100} src={img} /><br/><br/>
-            <h5 className="speakers-card__line-item__name">{name.toUpperCase()}</h5>
-            <h5 className="speakers-card__line-item__collage">{collage.toUpperCase()}</h5>
-        </Card.Grid>
-    );
-}

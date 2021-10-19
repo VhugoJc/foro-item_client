@@ -1,0 +1,21 @@
+.fixed-button {
+  display: block;
+  border-radius: 150px;
+  width: 60px;
+  height: 60px;
+  background-color: $turquoise;
+  right: 50px;
+  border: 2px solid $light;
+  text-align: center;
+  padding-top: 10px;
+  -moz-box-shadow: 5x 5px 5px rgba($color: $dark, $alpha: 0.5);
+  -webkit-box-shadow: 5px 5px 5px rgba($color: $dark, $alpha: 0.5);
+  box-shadow: 5px 5px 5px rgba($color: $dark, $alpha: 0.5);
+  &__icon {
+    color: $font-light !important;
+    font-size: 30px;
+  }
+  @media (max-width: 1000px) {
+    display: none;
+  }
+}

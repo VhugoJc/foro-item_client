@@ -1,0 +1,15 @@
+.inscription-form {
+  &__form {
+    width: 100% !important;
+    right: 0 !important;
+  }
+}
+.inscription-form__form-btn {
+  margin-left: 50% !important;
+  background-color: $turquoise !important;
+  width: 50% !important;
+  border: transparent !important;
+  &:hover {
+    background-color: $turquoise800 !important;
+  }
+}

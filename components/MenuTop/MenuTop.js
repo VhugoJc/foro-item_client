@@ -1,10 +1,14 @@
 import React,{useEffect} from 'react';
 import {Menu, Row,Col,Button} from 'antd';
+import {Link as LinkScroll,DirectLink, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll';
+import Link from 'next/link';
+import { REGISTER_URL } from '../../Utils/Constants';
 const MenuItem = Menu.Item;
 
 export default function MenuTop(){
     
     return(
+        <>
             <Row className="menu-top">
                 <Col lg={2}/>
                 <Col lg={20}>
@@ -15,22 +19,57 @@ export default function MenuTop(){
                         <div className="menu-top__right">
                         <Menu  mode="horizontal"className="menu-top__right-content" >
                         <MenuItem key="home" >
-                            <a>Home</a>
+                        <Link href="/"><a  onClick={e=>scroller.scrollTo("",{
+                            duration: 800,
+                            delay: 0,
+                            smooth: true,
+                            spy:false,
+                            hashSpy:false
+                        })}>
+                            Home</a></Link>
                         </MenuItem>
                         <MenuItem key="calendar" >
-                            Agenda
+                        <Link href="/#agenda" ><a  onClick={e=>scroller.scrollTo("agenda",{
+                            duration: 800,
+                            delay: 0,
+                            smooth: true,
+                            spy:false,
+                            hashSpy:false
+                        })}>
+                            Agenda</a></Link>
                         </MenuItem>
                         <MenuItem key="masterclass" >
-                            Talleres
+                        <Link href="/#talleres"><a  onClick={e=>scroller.scrollTo("talleres",{
+                            duration: 800,
+                            delay: 0,
+                            smooth: true,
+                            spy:false,
+                            hashSpy:false
+                        })}>
+                            Talleres</a></Link>
                         </MenuItem>
                         <MenuItem key="speakers" >
-                            Ponentes
-                        </MenuItem>
+                        <Link href="#ponentes"><a  onClick={e=>scroller.scrollTo("ponentes",{
+                            duration: 800,
+                            delay: 0,
+                            smooth: true,
+                            spy:false,
+                            hashSpy:false
+                        })}>
+                            Ponentes</a></Link>                        
+                            </MenuItem>
                         <MenuItem key="colleges" >
-                            Universidades
+                        <Link href="/#universidades"><a  onClick={e=>scroller.scrollTo("universidades",{
+                            duration: 800,
+                            delay: 0,
+                            smooth: true,
+                            spy:false,
+                            hashSpy:false
+                        })} >
+                            Universidades</a></Link>
                         </MenuItem>
                         <MenuItem key="register">
-                            <Button className="menu-top__register-btn">Registrárme</Button>
+                            <Button href={REGISTER_URL} target="_blank" rel="noreferrer noopener"  className="menu-top__register-btn">Registrárme</Button>
                         </MenuItem>
                         
                     </Menu>
@@ -40,31 +79,6 @@ export default function MenuTop(){
                 </Col>
                 <Col lg={2}/>                
             </Row>
+            </>
     );
 }
-/*
- <div className="menu-top_items">
-            <MenuItem key="home">
-                Home
-            </MenuItem>
-            <MenuItem key="calendar">
-                Agenda
-            </MenuItem>
-            <MenuItem key="masterclass">
-                Talleres
-            </MenuItem>
-            
-            <MenuItem key="speakers">
-                Ponentes
-            </MenuItem>
-            
-            <MenuItem key="collages">
-                Universidades
-            </MenuItem>
-            
-            <MenuItem key="register">
-                <Button type="primary" className="menu-top__register-btn">Registrárme</Button>
-            </MenuItem>
-        </div>
-    </Menu>
-*/

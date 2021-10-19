@@ -1,19 +1,31 @@
 import MasterClassCard from './MasterClassCard';
 import {ExperimentOutlined} from '@ant-design/icons';
 import { Col, Row } from 'antd';
+import { useEffect, useState } from 'react';
+import {getMasterClasses} from '../../Api/MasterclassesApi';
+import { BASE_PATH } from '../../Utils/Constants';
+import Modal from '../Modal';
+import InscriptionForm from '../Forms/InscriptionForm';
+import SuccessMessage from '../Message/SuccessMessage'
+
 export default function  MaterClass(){
-    const masterclassList=[];
-    for(let i=1; i<=6;i++){
-        masterclassList.push({
-            id:i,
-            title:`Taller nombre ${i}`, 
-            master:`Dr. Tallerista ${i}`,
-            description:"Universidad Politécnica",
-            img: `/img/course${i}.jpg`,
-        })
-    }
+    const [masterClasses, setmasterClasses] = useState([]);
+    const [isVisible, setisVisible] = useState(false);
+    const [registered, setregistered] = useState(false);
+
+
+    useEffect(()=>{
+        const api=async()=>{
+            const response = await getMasterClasses();
+            setmasterClasses(response);
+        }
+        api();
+    },[])
+
+  
 
     return(
+        <>
         <div className="master-class">
             <div className="header-section">
                 <ExperimentOutlined  className="turquoise"/>
@@ -24,12 +36,19 @@ export default function  MaterClass(){
                 <Col xl={20}>
                 <Row>
                     {
-                        masterclassList.length
-                        ?masterclassList.map(item=>{
+                        masterClasses.length>0
+                        ?masterClasses.map(item=>{
                             return( 
                             <MasterClassCard
                                 key={item.id}
-                                item = {item}
+                                item = {{
+                                    slug:item.clave,
+                                    title: item.titulo,
+                                    img:`${item.imagen.url}`,
+                                    master:`${item.ponente.nombre} ${item.ponente.apellidos}`,
+                                    description: item.ponente.institucion,
+                                }}
+                                dataSpeaker={item.ponente}
                             />
                             )
                             })
@@ -40,5 +59,9 @@ export default function  MaterClass(){
                 <Col xl={2}/>
             </Row>
         </div>
+        <Modal isVisible={isVisible} setIsVisible={setisVisible} title="pre-inscripción" width="80%" >{/*footer="No he recibido confirmación"*/}
+            { registered ?<SuccessMessage setisvisible={setisVisible}/> :<InscriptionForm  setregistered={setregistered}/>}
+        </Modal>
+        </>
     );
 }

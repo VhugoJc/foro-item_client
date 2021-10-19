@@ -1,0 +1,29 @@
+.fixed-button-mobile {
+  display: none;
+  z-index: 50;
+  position: fixed;
+  top: 80vh;
+  right: 50px;
+
+  @media (max-width: 1000px) {
+    display: block !important;
+  }
+  &__btn {
+    color: $font-light !important;
+    background-color: $turquoise !important;
+    width: 120px;
+    border: 2px solid $turquoise100 !important;
+  }
+  &__circle {
+    border: 2px solid $light;
+    text-align: center;
+    padding-top: 10px;
+    z-index: 50;
+    position: fixed;
+    border-radius: 150px;
+    width: 60px;
+    height: 60px;
+    background-color: $turquoise;
+    right: 50px;
+  }
+}

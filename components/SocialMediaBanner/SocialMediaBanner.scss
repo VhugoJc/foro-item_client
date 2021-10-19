@@ -27,14 +27,17 @@
       &__icon {
         height: 30px !important;
         width: 100% !important;
-        padding: 0 10px 0 10px;
-        margin: 0 auto;
+        padding: 0px 0px 0px 10px;
         transition: transform 0.2s;
         box-sizing: border-box;
         &:hover {
           -ms-transform: scale(1.5); /* IE 9 */
           -webkit-transform: scale(1.5); /* Safari 3-8 */
           transform: scale(1.5);
+        }
+
+        @media (max-width: 1000px) {
+          padding: 0px 0px 0px 0px !important ;
         }
       }
     }
